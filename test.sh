@@ -1,6 +1,5 @@
 #! /bin/bash
 # Filename:LoopPrint.sh
-
 function LoopPrint()
 {
     count=0;
