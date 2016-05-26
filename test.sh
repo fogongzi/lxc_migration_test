@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Filename:LoopPrint.sh
+#Filename:LoopPrint.sh
 
 function LoopPrint()
 {
