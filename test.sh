@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 # Filename:LoopPrint.sh
 function LoopPrint()
 {
