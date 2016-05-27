@@ -14,9 +14,9 @@ expect "password:"
 send "$sshPassWord\r"
 expect "$*"
 send "cd linux-3.13.0\r"
-except "$*"
+expect "$*"
 send "make clean\r"
-except ".tmp_versions"
+expect ".tmp_versions"
 send "make -j4\r"
 sleep 30
 expect eof
