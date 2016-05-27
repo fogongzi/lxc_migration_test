@@ -2,7 +2,7 @@
 
 set timeout 30
 set host "192.168.3.132"
-spawn ssh $host
+spawn ssh root@$host
 expect_before "no)?" {
 send "yes\r" }
 sleep 1
