@@ -1,8 +1,8 @@
 #!/usr/bin/expect -f
 
-set remoteServerHost "192.168.3.132"
-set sshName "root"
-set sshPassWord "chenxiao"
+set remoteServerHost "10.0.3.37"
+set sshName "ubuntu"
+set sshPassWord "ubuntu"
 set timeout 30
 
 set host "$remoteServerHost"
@@ -13,8 +13,9 @@ sleep 1
 expect "password:"
 send "$sshPassWord\r"
 expect "*#"
-#send "lxc-start -n u1\r"
-#sleep 1
-send "lxc-stop -n u1\r"
-sleep 1
+send "cd linux-3.13.0\r"
+send "make clean\r"
+sleep 5
+send "make -j4\r"
+sleep 30
 send "exit\r"
