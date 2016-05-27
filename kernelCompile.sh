@@ -12,10 +12,11 @@ send "yes\r" }
 sleep 1
 expect "password:"
 send "$sshPassWord\r"
-expect "*#"
-send "cd linux-3.13.0\r"
-send "make clean\r"
-sleep 5
-send "make -j4\r"
-sleep 30
-send "exit\r"
+expect "*#" {
+    send "cd linux-3.13.0\r"
+    send "make clean\r"
+    sleep 5
+    send "make -j4\r"
+    sleep 30
+    send "exit\r"
+}
