@@ -1,9 +1,9 @@
 #!/usr/bin/expect -f
 
-set timeout 30
 remoteServerHost="192.168.3.132"
 sshName="root"
 sshPassWord="chenxiao"
+set timeout 30
 
 function stopLXC(){
     set host "$1"
