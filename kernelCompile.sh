@@ -16,7 +16,7 @@ expect "$*"
 send "cd linux-3.13.0\r"
 expect "$*"
 send "make clean\r"
-expect ".tmp_versions"
+expect "$*"
 send "make -j4\r"
 sleep 30
 expect eof
