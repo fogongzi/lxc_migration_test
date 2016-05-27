@@ -12,9 +12,9 @@ send "yes\r" }
 sleep 1
 expect "password:"
 send "$sshPassWord\r"
-expect "#*"
+expect "$*"
 send "cd linux-3.13.0\r"
-except "#*"
+except "$*"
 send "make clean\r"
 except ".tmp_versions"
 send "make -j4\r"
