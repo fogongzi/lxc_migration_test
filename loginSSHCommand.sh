@@ -9,5 +9,6 @@ sleep 1
 expect "password:"
 send "chenxiao\r"
 expect "*#"
+ls
 send "echo my name is fivetrees > /root/fivetrees.txt\r"
 interact
