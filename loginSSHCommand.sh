@@ -14,6 +14,9 @@ expect "password:"
 send "$sshPassWord\r"
 expect "*#"
 send "lxc-start -n u1\r"
+sleep 1
 send "lxc-stop -n u1\r"
+sleep 1
 send "lxc-info -n u1\r"
+sleep 1
 send "exit\r"
