@@ -5,7 +5,7 @@ set sshName "root"
 set sshPassWord "chenxiao"
 set timeout 30
 
-function stopLXC(){
+stopLXC(){
     set host "$1"
     spawn ssh $2@$host
     expect_before "no)?" {
