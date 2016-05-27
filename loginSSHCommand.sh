@@ -5,20 +5,15 @@ set sshName "root"
 set sshPassWord "chenxiao"
 set timeout 30
 
-stopLXC(){
-    set host "$1"
-    spawn ssh $2@$host
-    expect_before "no)?" {
-    send "yes\r" }
-    sleep 1
-    expect "password:"
-    send "$3\r"
-    expect "*#"
-    send "lxc-stop -n $4\r"
-    send "lxc-info -n $4\r"
-    send "exit\r"
-}
-
-stopLXC $remoteServerHost $sshName $sshPassWord u1
-
-
+set host "$remoteServerHost"
+spawn ssh $sshName@$host
+expect_before "no)?" {
+send "yes\r" }
+sleep 1
+expect "password:"
+send "$sshPassWord\r"
+expect "*#"
+send "lxc-start -n u1\r"
+send "lxc-stop -n u1\r"
+send "lxc-info -n u1\r"
+send "exit\r"
