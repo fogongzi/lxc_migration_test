@@ -14,8 +14,10 @@ expect "password:"
 send "$sshPassWord\r"
 expect "*#"
 send "cd linux-3.13.0\r"
+echo "cd linux-3.13.0"
 send "make clean\r"
 sleep 5
+echo "make -j4"
 send "make -j4\r"
 sleep 30
 send "exit\r"
