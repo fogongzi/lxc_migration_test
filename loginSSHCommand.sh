@@ -1,16 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/expect
 
-function LoopPrint()
-{
-    count=0;
-    while [ $count -lt $1 ];
-    do
-        echo $count;
-        let ++count;
-        sleep 1;
-    done
-    return 0;
-}
-
-read -p "Please input the times of print you want: " n;
-LoopPrint $n;
+spawn /usr/bin/ssh root@192.168.3.132
+expect "*password:"
+send "chenxiao\r"
+expect "*]#"
+send "cd /root"
+expect "*]#"
+send "exit\r"
+expect eof
