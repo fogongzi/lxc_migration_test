@@ -48,7 +48,7 @@ function SCLXCLM() {
     result=$result" "$total_time
 
     #stop remote lxc
-    ./loginSSHCommand.sh
+    `pwd`/loginSSHCommand.sh
 
     echo $result
 }
