@@ -54,4 +54,5 @@ function SCLXCLM() {
     echo $result
 }
 
-SCLXCLM 1024M
+result_1024=`SCLXCLM 1024M`
+echo $result_1024
