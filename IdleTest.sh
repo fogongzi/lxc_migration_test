@@ -14,6 +14,7 @@ remote_server_IP=192.168.3.132
 phaul_execute_file_path=/software/criu_software/p.haul/p.haul-wrap
 login_SSH_command_path=/software/criu_software/shell_test/lxc_migration_test/loginSSHCommand.sh
 
+result_file_path=/opt/result_migration
 
 #stop and copy SCLXCLM
 function SCLXCLM() {
@@ -52,9 +53,7 @@ function SCLXCLM() {
     #stop remote lxc
     $login_SSH_command_path
 
-    $SCLXCLM_512M=$SCLXCLM_512M""$result
+    echo $result >> $result_file_path
 }
 
-SCLXCLM_512M=""
 SCLXCLM 1024M
-echo "**********"$SCLXCLM_512M
