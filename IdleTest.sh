@@ -33,7 +33,7 @@ function SCLXCLM() {
     $phaul_execute_file_path client $remote_server_IP lxc $lxc_name > $migration_logs_file_path 2>&1
     sleep 30
     #get number of iterations
-    result = $(cat $migration_logs_file_path | grep iterations= | cut -d"=" -f2)
+    result = `cat $migration_logs_file_path | grep iterations= | cut -d"=" -f2`
     #get downtime(frozen time)
     frozen_time = `cat $migration_logs_file_path | grep 'frozen time is' | cut -d"~" -f2 | cut -d" " -f1`
     result = $result" "$frozen_time
