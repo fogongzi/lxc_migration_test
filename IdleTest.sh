@@ -15,7 +15,7 @@ phaul_execute_file_path=/software/criu_software/p.haul/p.haul-wrap
 login_SSH_command_path=/software/criu_software/shell_test/lxc_migration_test/loginSSHCommand.sh
 
 #definite some result var
-SCLXCLM_512M=0
+SCLXCLM_512M
 
 #stop and copy SCLXCLM
 function SCLXCLM() {
@@ -54,7 +54,7 @@ function SCLXCLM() {
     #stop remote lxc
     $login_SSH_command_path
 
-    $SCLXCLM_512M="$result"
+    $SCLXCLM_512M=$result
 }
 
 SCLXCLM 1024M
