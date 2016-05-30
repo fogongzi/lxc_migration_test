@@ -15,6 +15,11 @@ phaul_execute_file_path=/software/criu_software/p.haul/p.haul-wrap
 login_SSH_command_path=/software/criu_software/shell_test/lxc_migration_test/loginSSHCommand.sh
 
 result_file_path=/opt/result_migration
+#test threshold
+threshold=20
+#definite test lxc memory size array
+lxc_mem_array=(512 1024 1536 2048 2560 3072 3584)
+length=${#lxc_mem_array[@]}
 
 #stop and copy SCLXCLM
 function SCLXCLM() {
@@ -34,7 +39,7 @@ function SCLXCLM() {
         rm -rf "$migration_logs_file_path"
     fi
     $phaul_execute_file_path client $remote_server_IP lxc $lxc_name > $migration_logs_file_path 2>&1
-    sleep 30
+    sleep 20
     #get number of iterations
     result=`cat $migration_logs_file_path | grep iterations= | cut -d"=" -f2`
     #get downtime(frozen time)
@@ -53,7 +58,29 @@ function SCLXCLM() {
     #stop remote lxc
     $login_SSH_command_path
 
-    result_1024M=$result
+    result_tmp=$result
+}
+
+#test SCLXCLM according to the threshold
+function test_SCLXCLM() {
+    #definite real test iterations
+    num_real_iters=0
+    iters_sum=0
+    frozen_time_sum=0
+    syn_time_sum=0
+    restore_time_sum=0
+    total_time_sum=0
+    for i in $lxc_mem_array
+    do
+        echo "test memory size="${lxc_mem_array[$i]}
+        for j in {1..$threshold}
+        do
+            result_tmp=""
+            SCLXCLM ${lxc_mem_array[$i]}"M"
+            echo ""
+        done
+    done
+
 }
 
 result_1024M=""
