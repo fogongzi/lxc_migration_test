@@ -55,4 +55,4 @@ function SCLXCLM() {
 }
 
 result_1024=`SCLXCLM 1024M`
-echo $result_1024
+echo "**********"$result_1024
