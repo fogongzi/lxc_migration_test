@@ -51,7 +51,7 @@ function SCLXCLM() {
     #stop remote lxc
     $login_SSH_command_path
 
-    return "$result"
+    echo "$result"
 }
 
 result_1024=`SCLXCLM 1024M`
