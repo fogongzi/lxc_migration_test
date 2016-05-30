@@ -27,10 +27,11 @@ function SCLXCLM() {
     #launch lxc
     lxc-start -n $lxc_name
     #do migration
-    if [ -d "$migration_logs_file_path"]; then
+    if [ -d "$migration_logs_file_path" ]; then
         rm -rf "$migration_logs_file_path"
     fi
     $phaul_execute_file_path client $remote_server_IP lxc $lxc_name > $migration_logs_file_path 2>&1
+    sleep 30
     #get number of iterations
     result = cat $migration_logs_file_path | grep iterations= | cut -d"=" -f2
     #get downtime(frozen time)
