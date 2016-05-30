@@ -33,19 +33,19 @@ function SCLXCLM() {
     $phaul_execute_file_path client $remote_server_IP lxc $lxc_name > $migration_logs_file_path 2>&1
     sleep 30
     #get number of iterations
-    result = `cat $migration_logs_file_path | grep iterations= | cut -d"=" -f2`
+    result=`cat $migration_logs_file_path | grep iterations= | cut -d"=" -f2`
     #get downtime(frozen time)
-    frozen_time = `cat $migration_logs_file_path | grep 'frozen time is' | cut -d"~" -f2 | cut -d" " -f1`
-    result = $result" "$frozen_time
+    frozen_time=`cat $migration_logs_file_path | grep 'frozen time is' | cut -d"~" -f2 | cut -d" " -f1`
+    result=$result" "$frozen_time
     #get syn time
-    syn_time = `cat $migration_logs_file_path | grep 'img sync time is' | cut -d"~" -f2 | cut -d" " -f1`
-    result = $result" "$syn_time
+    syn_time=`cat $migration_logs_file_path | grep 'img sync time is' | cut -d"~" -f2 | cut -d" " -f1`
+    result=$result" "$syn_time
     #get restore time
-    restore_time = `cat $migration_logs_file_path | grep 'restore time is' | cut -d"~" -f2 | cut -d" " -f1`
-    result = $result" "$restore_time
+    restore_time=`cat $migration_logs_file_path | grep 'restore time is' | cut -d"~" -f2 | cut -d" " -f1`
+    result=$result" "$restore_time
     #get total time
-    total_time = `cat $migration_logs_file_path | grep 'total time is' | cut -d"~" -f2 | cut -d" " -f1`
-    result = $result" "$total_time
+    total_time=`cat $migration_logs_file_path | grep 'total time is' | cut -d"~" -f2 | cut -d" " -f1`
+    result=$result" "$total_time
 
     #stop remote lxc
     ./loginSSHCommand.sh
