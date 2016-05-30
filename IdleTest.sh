@@ -12,6 +12,7 @@ lxc_name=u1
 lxc_config_path=/var/lib/lxc/$lxc_name/config
 remote_server_IP=192.168.3.132
 phaul_execute_file_path=/software/criu_software/p.haul/p.haul-wrap
+login_SSH_command_path=/software/criu_software/shell_test/lxc_migration_test/loginSSHCommand.sh
 
 #stop and copy SCLXCLM
 function SCLXCLM() {
@@ -48,7 +49,7 @@ function SCLXCLM() {
     result=$result" "$total_time
 
     #stop remote lxc
-    `pwd`/loginSSHCommand.sh
+    $login_SSH_command_path
 
     echo $result
 }
