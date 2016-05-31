@@ -78,6 +78,7 @@ function test_SCLXCLM() {
         for j in {1..$threshold}
         do
             result_tmp=""
+            echo "i="$i" "${lxc_mem_array[$i]}"M"
             SCLXCLM ${lxc_mem_array[$i]}"M"
             echo "******iter"$j":result="$result_tmp
             if [ ${#result_tmp} -gt 8 ]; then
