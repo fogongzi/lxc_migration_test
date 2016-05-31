@@ -13,6 +13,7 @@ lxc_config_path=/var/lib/lxc/$lxc_name/config
 remote_server_IP=192.168.3.132
 phaul_execute_file_path=/software/criu_software/p.haul/p.haul-wrap
 login_SSH_command_path=/software/criu_software/shell_test/lxc_migration_test/loginSSHCommand.sh
+kill_remote_phaul_service_path=/software/criu_software/shell_test/lxc_migration_test/kill_remote_phaul_service.sh
 
 result_file_path=/opt/result_migration
 #test threshold
@@ -59,6 +60,8 @@ function SCLXCLM() {
 
     #stop remote lxc
     $login_SSH_command_path
+    #kill remote p.haul-service
+    $kill_remote_phaul_service_path
 
     result_tmp=$result
 }
