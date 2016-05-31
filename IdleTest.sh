@@ -75,7 +75,7 @@ function test_SCLXCLM() {
         restore_time_sum=0
         total_time_sum=0
         echo "test memory size="$i
-        for j in {1..$threshold}
+        for j in {1..20}
         do
             result_tmp=""
             echo "j="$j" "$i"M"
