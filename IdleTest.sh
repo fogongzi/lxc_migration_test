@@ -85,13 +85,13 @@ function test_SCLXCLM() {
                 iter_tmp=`echo $result_tmp | cut -d" " -f1`
                 iters_sum=`expr $iters_sum + $iter_tmp`
                 frozen_time_tmp=`echo $result_tmp | cut -d" " -f2`
-                frozen_time_sum=`expr $frozen_time_sum + $frozen_time_tmp`
+                frozen_time_sum=$(awk 'BEGIN{printf "%.'$precision_length'f\n",'$frozen_time_sum'+'$frozen_time_tmp'}')
                 syn_time_tmp=`echo $result_tmp | cut -d" " -f3`
-                syn_time_sum=`expr $syn_time_sum + $syn_time_tmp`
+                syn_time_sum=$(awk 'BEGIN{printf "%.'$precision_length'f\n",'$syn_time_sum'+'$syn_time_tmp'}')
                 restore_time_tmp=`echo $result_tmp | cut -d" " -f4`
-                restore_time_sum=`expr $restore_time_sum + $restore_time_tmp`
+                restore_time_sum=$(awk 'BEGIN{printf "%.'$precision_length'f\n",'$restore_time_sum'+'$restore_time_tmp'}')
                 total_time_tmp=`echo $result_tmp | cut -d" " -f5`
-                total_time_sum=`expr $total_time_sum + $total_time_tmp`
+                total_time_sum=$(awk 'BEGIN{printf "%.'$precision_length'f\n",'$total_time_sum'+'$total_time_tmp'}')
                 #update iters
                 num_real_iters=`expr $num_real_iters+1`
             else
