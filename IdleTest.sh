@@ -74,12 +74,12 @@ function test_SCLXCLM() {
         syn_time_sum=0
         restore_time_sum=0
         total_time_sum=0
-        echo "test memory size="${lxc_mem_array[$i]}
+        echo "test memory size="$i
         for j in {1..$threshold}
         do
             result_tmp=""
-            echo "i="$i" "${lxc_mem_array[$i]}"M"
-            SCLXCLM ${lxc_mem_array[$i]}"M"
+            echo "j="$j" "$i"M"
+            SCLXCLM $i"M"
             echo "******iter"$j":result="$result_tmp
             if [ ${#result_tmp} -gt 8 ]; then
                 iter_tmp=`echo $result_tmp | cut -d" " -f1`
@@ -105,8 +105,8 @@ function test_SCLXCLM() {
         real_result=$real_result" "$(awk 'BEGIN{printf "%.'$precision_length'f\n",'$syn_time_sum'/'$num_real_iters'}')
         real_result=$real_result" "$(awk 'BEGIN{printf "%.'$precision_length'f\n",'$restore_time_sum'/'$num_real_iters'}')
         real_result=$real_result" "$(awk 'BEGIN{printf "%.'$precision_length'f\n",'$total_time_sum'/'$num_real_iters'}')
-        echo "*******lxc_mem_size="${lxc_mem_array[$i]}"M,result is:"$real_result
-        echo ${lxc_mem_array[$i]}"M "$real_result >> $result_file_path
+        echo "*******lxc_mem_size="$i"M,result is:"$real_result
+        echo $i"M "$real_result >> $result_file_path
         sleep 30
     done
 
