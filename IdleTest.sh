@@ -97,7 +97,7 @@ function test_SCLXCLM() {
                 total_time_tmp=`echo $result_tmp | cut -d" " -f5`
                 total_time_sum=$(awk 'BEGIN{printf "%.'$precision_length'f\n",'$total_time_sum'+'$total_time_tmp'}')
                 #update iters
-                num_real_iters=`expr $num_real_iters+1`
+                num_real_iters=`expr $num_real_iters + 1`
                 echo "num_real_iters="$num_real_iters",frozen_time_sum="$frozen_time_sum
             else
                 continue
