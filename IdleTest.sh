@@ -62,9 +62,9 @@ function SCLXCLM() {
     $login_SSH_command_path
     sleep 5
     #kill remote p.haul-service
-    $kill_remote_phaul_service_path
+    #$kill_remote_phaul_service_path
     #kill local p.haul
-    kill -9 `ps -elf | grep p.haul | awk '{print $4}'`
+    #kill -9 `ps -elf | grep p.haul | awk '{print $4}'`
 
     result_tmp=$result
 }
