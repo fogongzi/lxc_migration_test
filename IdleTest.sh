@@ -104,7 +104,7 @@ function test_SCLXCLM() {
             else
                 continue
             fi
-            sleep 30
+            sleep 60
         done
         #caluate the result
         real_result=$(awk 'BEGIN{printf "%.0f\n",'$iters_sum'/'$num_real_iters'}')
@@ -114,7 +114,7 @@ function test_SCLXCLM() {
         real_result=$real_result" "$(awk 'BEGIN{printf "%.'$precision_length'f\n",'$total_time_sum'/'$num_real_iters'}')
         echo "*******lxc_mem_size="$i"M,result is:"$real_result
         echo $i"M "$real_result >> $result_file_path
-        sleep 30
+        sleep 60
     done
 
 }
