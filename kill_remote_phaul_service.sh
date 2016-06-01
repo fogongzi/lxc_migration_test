@@ -13,6 +13,6 @@ sleep 1
 expect "password:"
 send "$sshPassWord\r"
 expect "#*"
-send "bash  kill -9 `ps -elf | grep p.haul-service | awk '{print \$4}'`\r"
+send "kill -9 `ps -elf | grep p.haul-service | awk '{print \$4}'`\r"
 expect "#*"
 send "exit\r"
