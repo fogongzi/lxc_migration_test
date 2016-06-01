@@ -42,7 +42,7 @@ function SCLXCLM() {
         rm -rf "$migration_logs_file_path"
     fi
     $phaul_execute_file_path client $remote_server_IP lxc $lxc_name > $migration_logs_file_path 2>&1
-    sleep 20
+    sleep 10
     #get number of iterations
     result=`cat $migration_logs_file_path | grep iterations= | cut -d"=" -f2`
     #get downtime(frozen time)
@@ -104,7 +104,7 @@ function test_SCLXCLM() {
             else
                 continue
             fi
-            sleep 10
+            sleep 30
         done
         #caluate the result
         real_result=$(awk 'BEGIN{printf "%.0f\n",'$iters_sum'/'$num_real_iters'}')
