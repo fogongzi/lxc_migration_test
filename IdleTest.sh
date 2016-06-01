@@ -60,6 +60,7 @@ function SCLXCLM() {
 
     #stop remote lxc
     $login_SSH_command_path
+    sleep 5
     #kill remote p.haul-service
     $kill_remote_phaul_service_path
 
