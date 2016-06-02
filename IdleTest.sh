@@ -19,7 +19,7 @@ result_file_path=/opt/result_migration
 #test threshold
 threshold=20
 #definite test lxc memory size array
-lxc_mem_array=(512 1024 1536 2048 2560 3072 3584)
+lxc_mem_array=(1024 1536 2048 2560 3072 3584)
 length=${#lxc_mem_array[@]}
 #definite precision
 precision_length=6
@@ -72,7 +72,7 @@ function SCLXCLM() {
 #test SCLXCLM according to the threshold
 function test_SCLXCLM() {
     #definite real test iterations
-    for i in $lxc_mem_array
+    for i in ${lxc_mem_array[*]}
     do
         num_real_iters=0
         iters_sum=0
