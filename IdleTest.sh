@@ -19,7 +19,8 @@ result_file_path=/opt/result_migration
 #test threshold
 threshold=20
 #definite test lxc memory size array
-lxc_mem_array=(1024 1536 2048 2560 3072 3584)
+#lxc_mem_array=(1024 1536 2048 2560 3072 3584)
+lxc_mem_array=(2048 2560 3072 3584)
 length=${#lxc_mem_array[@]}
 #definite precision
 precision_length=6
