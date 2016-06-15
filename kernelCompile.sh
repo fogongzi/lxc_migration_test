@@ -19,4 +19,4 @@ send "make clean\r"
 expect "$*"
 send "make -j4\r"
 sleep 30
-send "exit 1\r"
+expect << EOF
