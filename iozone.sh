@@ -1,6 +1,6 @@
 #!/usr/bin/expect -f
 
-set remoteServerHost "10.0.3.37"
+set remoteServerHost "10.0.3.13"
 set sshName "ubuntu"
 set sshPassWord "ubuntu"
 set timeout 100
