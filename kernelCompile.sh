@@ -18,3 +18,4 @@ expect "$*"
 send "make clean\r"
 expect "$*"
 send "make -j4\r"
+sleep 30
