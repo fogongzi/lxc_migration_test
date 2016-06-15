@@ -41,7 +41,8 @@ function SCLXCLM() {
     lxc-start -n $lxc_name
 
     #do some compile
-    $kernel_compile_command_path
+    $kernel_compile_command_path &
+    sleep 30
 
     #do migration
     if [ -d "$migration_logs_file_path" ]; then
@@ -145,7 +146,8 @@ function PCLXCLM() {
     lxc-start -n $lxc_name
 
     #do some compile
-    $kernel_compile_command_path
+    $kernel_compile_command_path &
+    sleep 30
 
     #do migration
     if [ -d "$migration_logs_file_path" ]; then
@@ -246,7 +248,8 @@ function SAPCLXCLM_RATIO() {
     lxc-start -n $lxc_name
 
     #do some compile
-    $kernel_compile_command_path
+    $kernel_compile_command_path &
+    sleep 30
 
     #do migration
     if [ -d "$migration_logs_file_path" ]; then
@@ -347,7 +350,8 @@ function SAPCLXCLM() {
     lxc-start -n $lxc_name
 
     #do some compile
-    $kernel_compile_command_path
+    $kernel_compile_command_path &
+    sleep 30
 
     #do migration
     if [ -d "$migration_logs_file_path" ]; then
