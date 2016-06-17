@@ -230,7 +230,7 @@ function test_PCLXCLM() {
     done
 
 }
-test_PCLXCLM
+#test_PCLXCLM
 
 #-------------------------------------------------------------------------------------------------------------
 #SAPCLXCLM(ratio)
@@ -332,7 +332,7 @@ function test_SAPCLXCLM_RATIO() {
     done
 
 }
-#test_SAPCLXCLM_RATIO
+test_SAPCLXCLM_RATIO
 
 #-------------------------------------------------------------------------------------------------------------
 #SAPCLXCLM
