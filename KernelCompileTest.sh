@@ -126,7 +126,7 @@ function test_SCLXCLM() {
 
 }
 
-#test_SCLXCLM
+test_SCLXCLM
 #result_1024M=""
 #SCLXCLM 1024M
 #echo "******"$result_1024M
@@ -332,7 +332,7 @@ function test_SAPCLXCLM_RATIO() {
     done
 
 }
-test_SAPCLXCLM_RATIO
+#test_SAPCLXCLM_RATIO
 
 #-------------------------------------------------------------------------------------------------------------
 #SAPCLXCLM
