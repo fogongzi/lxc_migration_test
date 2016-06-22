@@ -126,7 +126,7 @@ function test_SCLXCLM() {
 
 }
 
-test_SCLXCLM
+#test_SCLXCLM
 #result_1024M=""
 #SCLXCLM 1024M
 #echo "******"$result_1024M
@@ -332,12 +332,12 @@ function test_SAPCLXCLM_RATIO() {
     done
 
 }
-#test_SAPCLXCLM_RATIO
+test_SAPCLXCLM_RATIO
 
 #-------------------------------------------------------------------------------------------------------------
 #SAPCLXCLM
 function SAPCLXCLM() {
-    lxc_mem_size=$1;
+    lxc_mem_size=$1;-
     #do some installation
     cd $phaul_cp_dir;
     cp $sel_pre_copy_file $iter_copy_file;
